@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  node:
+    image: node:16.14
+    container_name:  api_node
+    working_dir: /app/
+    volumes:
+      - ./:/app
+    tty: true
+    stdin_open: true
+    environment:
+      - DB_USER=root
+      - DB_PASSWORD=password
+      - DB_NAME=TypeScriptExpress
+      - DB_PORT=33060
+      - PORT=3005
+    depends_on:
+      - db
+    networks:
+    - exercicios
+    ports:
+      - 3005:3005
+  
+  db:
+    image: mysql:8.0.23
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+    container_name: api_database
+    ports:
+      - 33060:3306
+    restart: always
+    networks:
+      - exercicios
+    
+networks:
+  exercicios:
+    driver: bridge
