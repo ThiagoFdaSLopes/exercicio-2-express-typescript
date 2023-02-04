@@ -1,0 +1,25 @@
+{
+  "name": "exercicios",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "npm run build && node ./dist/index.js",
+    "dev": "tsnd .",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "4.17",
+    "@types/node": "16.11",
+    "ts-node-dev": "1.1",
+    "typescript": "4.4"
+  },
+  "dependencies": {
+    "express": "4.17",
+    "mysql2": "2.3"
+  }
+}
