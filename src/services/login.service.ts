@@ -16,5 +16,5 @@ export default class LoginService {
     } catch (error) {
       throw new Error('Usuario ou login incorreto');
     }
-  }
+  };
 }
